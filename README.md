@@ -1,4 +1,6 @@
 # Coded by Jesse Nebling (@bashexplode)
+A tool for novice pentesters that are not familiar with built-in Windows commands.
+
 #### Description:
 Wrapper to run a single command on multiple machines via wmic or DCOM with a single set of user credentials, this script can also perform procdump, 
 perform Out-Minidump, or perform Invoke-Mimikatz -DumpCreds and pull the results to your machine from a single or multiple machines. This may be used to test a SOC or SIEM tool with multiple logins to machines. 
