@@ -2,10 +2,12 @@
 A tool for novice pentesters that are not familiar with built-in Windows commands.
 
 #### Description:
-Wrapper to run a single command on multiple machines via wmic or DCOM with a single set of user credentials, this script can also perform procdump, 
-perform Out-Minidump, or perform Invoke-Mimikatz -DumpCreds and pull the results to your machine from a single or multiple machines. This may be used to test a SOC or SIEM tool with multiple logins to machines. 
+Wrapper to run a single command on multiple machines via wmic or DCOM with a single set of user credentials. This script can also perform procdump, perform Out-Minidump, or perform Invoke-Mimikatz -DumpCreds and pull the results to your machine from a single or multiple machines. This may be used to test a SOC or SIEM tool with multiple logins to multiple machines. 
+
 YOU MUST HAVE procdump.exe ON YOUR LOCAL MACHINE TO USE THE -ProcDump SWITCH (https://download.sysinternals.com/files/Procdump.zip), if you have an internet connection -DownloadProcDump may be used. 
+
 TO USE THE -InvMkatz OR -MKatz SWITCHES YOU MUST HAVE THE Invoke-Mimikatz.ps1 SCRIPT HOSTED ON A WEB SERVER (https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Invoke-Mimikatz.ps1).
+
 TO USE -MMCCommand you must currently be in a runas session as a user that has local admin on the remote host
 
 #### Usage:
