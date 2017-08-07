@@ -12,7 +12,7 @@ TO USE -MMCCommand you must currently be in a runas session as a user that has l
 
 #### License:
 
-This script is under the [BSD 3-Clause license](https://github.com/bashexplode/Invoke-LateralMovement/blob/master/LICENSE).
+This script is under the [BSD 3-Clause license](https://raw.githubusercontent.com/bashexplode/Invoke-LateralMovement/master/LICENSE).
 
 #### Usage:
 .EXAMPLE  
