@@ -1,18 +1,6 @@
 # Coded by Jesse Nebling (@bashexplode)
 A tool for novice pentesters that are not familiar with built-in Windows commands.
 
-Copyright 2017, Jesse Nebling
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 #### Description:
 Wrapper to run a single command on multiple machines via wmic or DCOM with a single set of user credentials. This script can also perform procdump, perform Out-Minidump, or perform Invoke-Mimikatz -DumpCreds and pull the results to your machine from a single or multiple machines. This may be used to test a SOC or SIEM tool with multiple logins to multiple machines. 
 
@@ -21,6 +9,10 @@ YOU MUST HAVE procdump.exe ON YOUR LOCAL MACHINE TO USE THE -ProcDump SWITCH (ht
 TO USE THE -InvMkatz OR -MKatz SWITCHES YOU MUST HAVE THE Invoke-Mimikatz.ps1 SCRIPT HOSTED ON A WEB SERVER (https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Invoke-Mimikatz.ps1).
 
 TO USE -MMCCommand you must currently be in a runas session as a user that has local admin on the remote host
+
+#### License:
+
+This script is under the [BSD 3-Clause license](https://github.com/bashexplode/Invoke-LateralMovement/blob/master/LICENSE).
 
 #### Usage:
 .EXAMPLE  
